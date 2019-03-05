@@ -1,0 +1,18 @@
+{
+    "europeana": {
+        "key":""
+    },
+    "flickr":{
+        "apiKey":"",
+        "apiSecret":"",
+        "userID":"",
+        "accessToken":"",
+        "accessTokenSecret":""
+    },
+    "mysql":{
+        "host":"",
+        "user":"",
+        "password":"",
+        "db":""
+    }
+}
