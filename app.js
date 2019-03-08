@@ -1,5 +1,7 @@
 const express = require('express'),
+    bodyParser = require('body-parser'),
     path = require('path'),
+    app= express(),
     router = express.Router(),
     config = require('config'),
     europeanaConfig = config.get('europeana'),
@@ -39,6 +41,17 @@ dbClient.connect(function(err) {
         console.error('error connecting: ' + err.stack);
     }
 });
+
+app.use(bodyParser.json())
+
+router.use(function(req, res, next){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+})
+app.use('/',router)
+
+
 
 router.get('/dashboard/:version?', (req, res) => {
     if (parseInt(req.params.version) === 3) {
@@ -210,5 +223,7 @@ router.get('/colorLemma/:name', function(req, res, next) {
     });
 });
 
-
-module.exports = router;
+app.set('port', process.env.PORT || 3030);
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});
