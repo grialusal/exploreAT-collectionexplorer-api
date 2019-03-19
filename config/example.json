@@ -1,18 +1,35 @@
 {
-    "europeana": {
-        "key":""
+    "mysql": {
+        "host": "",
+        "user": "",
+        "db": "",
+        "password": ""
     },
-    "flickr":{
-        "apiKey":"",
-        "apiSecret":"",
-        "userID":"",
-        "accessToken":"",
-        "accessTokenSecret":""
+    "mongodb": {
+        "url": ""
     },
-    "mysql":{
-        "host":"",
-        "user":"",
-        "password":"",
-        "db":""
+    "flickr": {
+      "apiKey": "",
+      "apiSecret": "",
+      "userId": "",
+      "accessToken": "",
+      "accessTokenSecret": ""
+    },
+    "elasticsearch": {
+        "host": "",
+        "truststore_pass": "",
+        "keystore_pass": ""
+    },
+    "jwt_config": {
+        "secretOrKey": ""
+    },
+    "email": {
+        "address": "",
+        "password" : "",
+        "baseURL": "",
+        "sendTo": ""
+    },
+    "europeana":{
+            "key":""
     }
 }
